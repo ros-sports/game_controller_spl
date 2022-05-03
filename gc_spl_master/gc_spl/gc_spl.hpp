@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef GC_SPL__GC_SPL_HPP_
-#define GC_SPL__GC_SPL_HPP_
+#ifndef GC_SPL_MASTER__GC_SPL_HPP_
+#define GC_SPL_MASTER__GC_SPL_HPP_
 
 
-#endif  // GC_SPL__GC_SPL_HPP_
+#endif  // GC_SPL_MASTER__GC_SPL_HPP_
