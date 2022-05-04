@@ -1,14 +1,3 @@
-uint8 TEAM_BLUE=0  # blue, cyan
-uint8 TEAM_RED=1  # red, magenta, pink
-uint8 TEAM_YELLOW=2  # yellow
-uint8 TEAM_BLACK=3  # black, dark gray
-uint8 TEAM_WHITE=4  # white
-uint8 TEAM_GREEN=5  # green
-uint8 TEAM_ORANGE=6  # orange
-uint8 TEAM_PURPLE=7  # purple, violet
-uint8 TEAM_BROWN=8  # brown
-uint8 TEAM_GRAY=9  # lighter gray
-
 uint8 COMPETITION_PHASE_ROUNDROBIN=0
 uint8 COMPETIION_PHASE_PLAYOFF=1
 
@@ -35,16 +24,15 @@ uint8 SET_PLAY_CORNER_KICK=3
 uint8 SET_PLAY_KICK_IN=4
 uint8 SET_PLAY_PENALTY_KICK=5
 
-uint8 PENALTY_NONE=0
-uint8 PENALTY_SPL_ILLEGAL_BALL_CONTACT=1
-uint8 PENALTY_SPL_PLAYER_PUSHING=2
-uint8 PENALTY_SPL_ILLEGAL_MOTION_IN_SET=3
-uint8 PENALTY_SPL_INACTIVE_PLAYER=4
-uint8 PENALTY_SPL_ILLEGAL_POSITION=5
-uint8 PENALTY_SPL_LEAVING_THE_FIELD=6
-uint8 PENALTY_SPL_REQUEST_FOR_PICKUP=7
-uint8 PENALTY_SPL_LOCAL_GAME_STUCK=8
-uint8 PENALTY_SPL_ILLEGAL_POSITION_IN_SET=9
-
-uint8 PENALTY_SUBSTITUTE=14
-uint8 PENALTY_MANUAL=15
+uint8 packet_number
+uint8 players_per_team
+uint8 competition_phase
+uint8 competition_type
+uint8 game_phase
+uint8 state
+uint8 set_play
+uint8 first_half
+uint8 kicking_team
+int16 secs_remaining
+int16 secondary_time
+rcgcd_14/TeamInfo[2] teams
