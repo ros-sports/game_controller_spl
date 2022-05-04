@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(gc_spl_splsm_7)
+project(rcgcrd_4)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -11,7 +11,7 @@ find_package(rosidl_default_generators REQUIRED)
 
 # generate interfaces
 rosidl_generate_interfaces(${PROJECT_NAME}
-  "SPLSM.msg"
+  "msg/RCGCRD.msg"
 )
 
 # export dependencies
