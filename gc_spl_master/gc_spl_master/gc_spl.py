@@ -15,6 +15,8 @@
 import socket
 from threading import Thread
 
+from robocup_game_control_data import GAMECONTROLLER_DATA_PORT, RoboCupGameControlData
+
 from rcgcd_14.msg import RCGCD
 
 import rclpy
@@ -32,9 +34,7 @@ class GCSPL(Node):
         super().__init__(node_name, **kwargs)
 
         # Read and log parameters
-        data_port = self.get_parameter_or('data_port', 3838)
         return_port = self.get_parameter_or('return_port', 3939)
-        self.get_logger().debug('data_port: "%s"' % data_port)
         self.get_logger().debug('return_port: "%s"' % return_port)
 
         # Setup publisher
@@ -45,7 +45,7 @@ class GCSPL(Node):
             socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)  # UDP
         self._client.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
         self._client.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
-        self._client.bind(('', data_port))
+        self._client.bind(('', GAMECONTROLLER_DATA_PORT))
         # Set timeout so _loop can constantly check for rclpy.ok()
         self._client.settimeout(0.1)
 
@@ -58,7 +58,14 @@ class GCSPL(Node):
             try:
                 data, _ = self._client.recvfrom(1024)
                 self.get_logger().debug('received: "%s"' % data)
+
+                # Convert data to RoboCupGameControlData struct
+                parsed_data = RoboCupGameControlData.parse(data)
+
+                # Convert parsed_data to ROS msg
                 rcgcd = RCGCD()
+
+                # Publish it
                 self._publisher.publish(rcgcd)
             except TimeoutError:
                 pass
