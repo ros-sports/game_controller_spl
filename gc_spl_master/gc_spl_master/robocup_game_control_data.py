@@ -1,3 +1,17 @@
+# Copyright 2022 Kenji Brameld
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 """
 Library to convert binary udp data to a meaningful python object.
 
@@ -9,7 +23,7 @@ Example of listening to the GameController, and accessing the data using this li
     # Setup UDP client
     client = socket.socket(
         socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)  # UDP
-    client.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)  # SO_REUSEADDR instead of SO_REUSEPORT to work while TCM is running
+    client.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)  # SO_REUSEADDR instead of SO_REUSEPORT to work while TCM is running  # noqa: E501
     client.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
     client.bind(('', GAMECONTROLLER_DATA_PORT))
 

@@ -15,12 +15,13 @@
 import socket
 import time
 
-from gc_spl_master.gc_spl import GCSPL
-from gc_spl_master import robocup_game_control_data as rgcd
-
 from construct import Container
 
+from gc_spl_master import robocup_game_control_data as rgcd
+from gc_spl_master.gc_spl import GCSPL
+
 from rcgcd_14.msg import RCGCD
+
 from rcgcrd_4.msg import RCGCRD
 
 import rclpy
@@ -136,15 +137,16 @@ class TestGCSPL:
         publisher = test_node.create_publisher(RCGCRD, 'gc/return_data', 10)
 
         # UDP Server - adapted from https://github.com/ninedraft/python-udp/blob/master/server.py
-        server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
+        server = socket.socket(
+            socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
         server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
         server.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
         server.bind((socket.gethostbyname(socket.gethostname()), 3939))
         server.settimeout(0.1)
-        
+
         # Send first message so client knows GC's address.
         server.sendto(self.msg, ('', 3838))
-        
+
         # Publish RCGCRD to gc_spl_node
         publisher.publish(RCGCRD())
 

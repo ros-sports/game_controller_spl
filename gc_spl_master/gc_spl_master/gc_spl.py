@@ -15,16 +15,19 @@
 import socket
 from threading import Thread
 
-from gc_spl_master.robocup_game_control_data import GAMECONTROLLER_DATA_PORT, RoboCupGameControlData
-from gc_spl_master.robocup_game_control_return_data import GAMECONTROLLER_RETURN_PORT, RoboCupGameControlReturnData
+from construct import Container
+
+from gc_spl_master.robocup_game_control_data import GAMECONTROLLER_DATA_PORT, \
+    RoboCupGameControlData
+from gc_spl_master.robocup_game_control_return_data import \
+    GAMECONTROLLER_RETURN_PORT, RoboCupGameControlReturnData
 
 from rcgcd_14.msg import RCGCD
+
 from rcgcrd_4.msg import RCGCRD
 
 import rclpy
 from rclpy.node import Node
-
-from construct import Container
 
 
 class GCSPL(Node):
@@ -70,7 +73,7 @@ class GCSPL(Node):
                 self.get_logger().debug('received: "%s"' % data)
 
                 # Convert data to RoboCupGameControlData struct
-                parsed_data = RoboCupGameControlData.parse(data)
+                _ = RoboCupGameControlData.parse(data)
 
                 # Convert parsed_data to ROS msg
                 rcgcd = RCGCD()
@@ -84,7 +87,8 @@ class GCSPL(Node):
 
         if self._host is None:
             self.get_logger().debug(
-                'Not returning RoboCupGameControlReturnData, as GameController host address is not known yet.')
+                'Not returning RoboCupGameControlReturnData, as GameController'
+                ' host address is not known yet.')
             return
 
         # Collect and send data to GameController
