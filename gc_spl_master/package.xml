@@ -15,6 +15,7 @@
   <exec_depend>rclpy</exec_depend>
   <exec_depend>rcgcd_14</exec_depend>
   <exec_depend>rcgcrd_4</exec_depend>
+  <exec_depend>python3-construct</exec_depend>
 
   <export>
     <build_type>ament_python</build_type>
