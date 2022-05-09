@@ -15,12 +15,16 @@
 import socket
 from threading import Thread
 
-from robocup_game_control_data import GAMECONTROLLER_DATA_PORT, RoboCupGameControlData
+from gc_spl_master.robocup_game_control_data import GAMECONTROLLER_DATA_PORT, RoboCupGameControlData
+from gc_spl_master.robocup_game_control_return_data import GAMECONTROLLER_RETURN_PORT, RoboCupGameControlReturnData
 
 from rcgcd_14.msg import RCGCD
+from rcgcrd_4.msg import RCGCRD
 
 import rclpy
 from rclpy.node import Node
+
+from construct import Container
 
 
 class GCSPL(Node):
@@ -29,6 +33,7 @@ class GCSPL(Node):
     _loop_thread = None
     _client = None
     _publisher = None
+    _host = None
 
     def __init__(self, node_name='gc_spl', **kwargs):
         super().__init__(node_name, **kwargs)
@@ -40,10 +45,15 @@ class GCSPL(Node):
         # Setup publisher
         self._publisher = self.create_publisher(RCGCD, 'gc/data', 10)
 
+        # Setup subscriber
+        self._subscriber = self.create_subscription(
+            RCGCRD, 'gc/return_data', self._rcgcrd_callback, 10)
+
         # UDP Client - adapted from https://github.com/ninedraft/python-udp/blob/master/client.py
         self._client = socket.socket(
             socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)  # UDP
-        self._client.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+        # This has to be SO_REUSEADDR instead of SO_REUSEPORT to work with TCM
+        self._client.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self._client.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
         self._client.bind(('', GAMECONTROLLER_DATA_PORT))
         # Set timeout so _loop can constantly check for rclpy.ok()
@@ -56,7 +66,7 @@ class GCSPL(Node):
     def _loop(self):
         while rclpy.ok():
             try:
-                data, _ = self._client.recvfrom(1024)
+                data, (self._host, _) = self._client.recvfrom(1024)
                 self.get_logger().debug('received: "%s"' % data)
 
                 # Convert data to RoboCupGameControlData struct
@@ -69,6 +79,24 @@ class GCSPL(Node):
                 self._publisher.publish(rcgcd)
             except TimeoutError:
                 pass
+
+    def _rcgcrd_callback(self, msg):
+
+        if self._host is None:
+            self.get_logger().debug(
+                'Not returning RoboCupGameControlReturnData, as GameController host address is not known yet.')
+            return
+
+        # Collect and send data to GameController
+        container = Container(
+            teamNum=5,
+            playerNum=3,
+            fallen=0,
+        )
+        data = RoboCupGameControlReturnData.build(container)
+
+        # Return data directly to the GameController's address and return port
+        self._client.sendto(data, (self._host, GAMECONTROLLER_RETURN_PORT))
 
 
 def main(args=None):
