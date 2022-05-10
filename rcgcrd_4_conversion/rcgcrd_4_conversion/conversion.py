@@ -21,13 +21,17 @@ from rcgcrd_4_conversion.robocup_game_control_return_data import RoboCupGameCont
 
 def rcgcrd_msg_to_data(msg: RCGCRD) -> bytes:
     """Convert RCGCRD ROS msg to binary data."""
+    # Must convert numpy.ndarray to list
+    pose = [msg.pose[0], msg.pose[1], msg.pose[2]]
+    ball = [msg.ball[0], msg.ball[1]]
+
     container = Container(
         playerNum=msg.player_num,
         teamNum=msg.team_num,
         fallen=msg.fallen,
-        pose=msg.pose,
+        pose=pose,
         ballAge=msg.ball_age,
-        ball=msg.ball
+        ball=ball
     )
     data = RoboCupGameControlReturnData.build(container)
     return data
