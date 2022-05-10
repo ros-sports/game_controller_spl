@@ -17,10 +17,11 @@ import time
 
 from construct import Container
 
-from gc_spl_master import robocup_game_control_data as rgcd
 from gc_spl_master.gc_spl import GCSPL
 
 from rcgcd_14.msg import RCGCD
+
+from rcgcd_14_conversion.robocup_game_control_data import RoboCupGameControlData
 
 from rcgcrd_4.msg import RCGCRD
 
@@ -32,66 +33,54 @@ class TestGCSPL:
 
     received = None
 
-    msg = rgcd.RoboCupGameControlData.build(
+    msg = RoboCupGameControlData.build(
         Container(
-            packetNumber=1,
-            playersPerTeam=5,
-            competitionPhase=rgcd.COMPETITION_PHASE_PLAYOFF,
-            competitionType=rgcd.COMPETITION_TYPE_7V7,
-            gamePhase=rgcd.GAME_PHASE_NORMAL,
-            state=rgcd.STATE_READY,
-            setPlay=rgcd.SET_PLAY_CORNER_KICK,
-            firstHalf=1,
-            kickingTeam=1,
-            secsRemaining=10,
-            secondaryTime=2,
+            packetNumber=0,
+            playersPerTeam=0,
+            competitionPhase=0,
+            competitionType=0,
+            gamePhase=0,
+            state=0,
+            setPlay=0,
+            firstHalf=0,
+            kickingTeam=0,
+            secsRemaining=0,
+            secondaryTime=0,
             teams=[
                 Container(
-                    teamNumber=1,
-                    teamColour=rgcd.TEAM_BLACK,
-                    score=1,
-                    penaltyShot=2,
-                    singleShots=3,
-                    messageBudget=1234,
-                    players=[
-                        Container(penalty=rgcd.PENALTY_MANUAL,
-                                  secsTillUnpenalised=30),
-                        Container(penalty=rgcd.PENALTY_NONE,
-                                  secsTillUnpenalised=0),
-                        Container(penalty=rgcd.PENALTY_NONE,
-                                  secsTillUnpenalised=0),
-                        Container(penalty=rgcd.PENALTY_NONE,
-                                  secsTillUnpenalised=0),
-                        Container(penalty=rgcd.PENALTY_NONE,
-                                  secsTillUnpenalised=0),
-                        Container(penalty=rgcd.PENALTY_NONE,
-                                  secsTillUnpenalised=0),
-                        Container(penalty=rgcd.PENALTY_NONE,
-                                  secsTillUnpenalised=0)
-                    ]),
-                Container(
-                    teamNumber=2,
-                    teamColour=rgcd.TEAM_BLUE,
+                    teamNumber=0,
+                    teamColour=0,
                     score=0,
                     penaltyShot=0,
                     singleShots=0,
                     messageBudget=0,
                     players=[
-                        Container(penalty=rgcd.PENALTY_NONE,
-                                  secsTillUnpenalised=0),
-                        Container(penalty=rgcd.PENALTY_NONE,
-                                  secsTillUnpenalised=0),
-                        Container(penalty=rgcd.PENALTY_NONE,
-                                  secsTillUnpenalised=0),
-                        Container(penalty=rgcd.PENALTY_NONE,
-                                  secsTillUnpenalised=0),
-                        Container(penalty=rgcd.PENALTY_NONE,
-                                  secsTillUnpenalised=0),
-                        Container(penalty=rgcd.PENALTY_NONE,
-                                  secsTillUnpenalised=0),
-                        Container(penalty=rgcd.PENALTY_NONE,
-                                  secsTillUnpenalised=0)
-                    ])
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0)
+                    ]
+                ),
+                Container(
+                    teamNumber=0,
+                    teamColour=0,
+                    score=0,
+                    penaltyShot=0,
+                    singleShots=0,
+                    messageBudget=0,
+                    players=[
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0)
+                    ]
+                )
             ]
         )
     )

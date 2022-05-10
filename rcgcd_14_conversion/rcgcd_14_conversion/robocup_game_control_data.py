@@ -43,7 +43,6 @@ Example of listening to the GameController, and accessing the data using this li
 from construct import Array, Byte, Const, Int16sl, Int16ul, Struct
 
 GAMECONTROLLER_DATA_PORT = 3838
-GAMECONTROLLER_RETURN_PORT = 3939
 
 GAMECONTROLLER_STRUCT_HEADER = b'RGme'
 GAMECONTROLLER_STRUCT_VERSION = 14
