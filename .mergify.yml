@@ -1,0 +1,10 @@
+pull_request_rules:
+  - name: backport to older distros
+    conditions:
+      - base=rolling
+    actions:
+      backport:
+        branches:
+          - galactic
+        assignees:
+          - "{{ author }}"
