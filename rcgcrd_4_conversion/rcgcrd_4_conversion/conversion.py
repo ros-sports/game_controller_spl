@@ -19,7 +19,8 @@ from rcgcrd_4.msg import RCGCRD
 from rcgcrd_4_conversion.robocup_game_control_return_data import RoboCupGameControlReturnData
 
 
-def msg_to_data(msg: RCGCRD) -> bytes:
+def rcgcrd_msg_to_data(msg: RCGCRD) -> bytes:
+    """Convert RCGCRD ROS msg to binary data."""
     container = Container(
         playerNum=msg.player_num,
         teamNum=msg.team_num,
@@ -30,15 +31,3 @@ def msg_to_data(msg: RCGCRD) -> bytes:
     )
     data = RoboCupGameControlReturnData.build(container)
     return data
-
-
-def data_to_msg(data: bytes) -> RCGCRD:
-    parsed = RoboCupGameControlReturnData.parse(data)
-    msg = RCGCRD()
-    msg.player_num = parsed.playerNum
-    msg.team_num = parsed.teamNum
-    msg.fallen = parsed.fallen
-    msg.pose = parsed.pose
-    msg.ball_age = parsed.ballAge
-    msg.ball = parsed.ball
-    return msg
