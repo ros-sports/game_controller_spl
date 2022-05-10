@@ -1,4 +1,4 @@
-# Template Repo
+# GC SPL
 
 [![Build and Test (foxy)](https://github.com/ijnek/gc_spl/actions/workflows/build_and_test_foxy.yaml/badge.svg?branch=galactic)](https://github.com/ijnek/gc_spl/actions/workflows/build_and_test_foxy.yaml?query=branch:galactic)
 [![Build and Test (galactic)](https://github.com/ijnek/gc_spl/actions/workflows/build_and_test_galactic.yaml/badge.svg?branch=galactic)](https://github.com/ijnek/gc_spl/actions/workflows/build_and_test_galactic.yaml?query=branch:galactic)
