@@ -120,7 +120,7 @@ TeamInfo = Struct(
 
 RoboCupGameControlData = Struct(
     'header' / Const(GAMECONTROLLER_STRUCT_HEADER),  # header to identify the structure  # noqa: E501
-    'version' / Const(GAMECONTROLLER_STRUCT_VERSION, Byte),  # version of the data structure  # noqa: E501
+    'version' / Const(Byte, GAMECONTROLLER_STRUCT_VERSION),  # version of the data structure  # noqa: E501
     'packetNumber' / Byte,      # number incremented with each packet sent (with wraparound)  # noqa: E501
     'playersPerTeam' / Byte,    # the number of players on a team
     'competitionPhase' / Byte,  # phase of the competition (COMPETITION_PHASE_ROUNDROBIN, COMPETITION_PHASE_PLAYOFF)  # noqa: E501

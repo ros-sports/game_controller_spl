@@ -21,7 +21,7 @@ GAMECONTROLLER_RETURN_STRUCT_VERSION = 4
 
 RoboCupGameControlReturnData = Struct(
     'header' / Const(GAMECONTROLLER_RETURN_STRUCT_HEADER),  # "RGrt"
-    'version' / Const(GAMECONTROLLER_RETURN_STRUCT_VERSION, Byte),  # has to be set to GAMECONTROLLER_RETURN_STRUCT_VERSION  # noqa: E501
+    'version' / Const(Byte, GAMECONTROLLER_RETURN_STRUCT_VERSION),  # has to be set to GAMECONTROLLER_RETURN_STRUCT_VERSION  # noqa: E501
     'playerNum' / Default(Byte, 0),  # player number starts with 1
     'teamNum' / Default(Byte, 0),  # team number
     'fallen' / Default(Byte, 255),  # 1 means that the robot is fallen, 0 means that the robot can play  # noqa: E501
