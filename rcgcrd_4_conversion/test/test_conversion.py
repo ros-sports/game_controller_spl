@@ -12,13 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from rcgcrd_4_conversion.conversion import msg_to_data, data_to_msg
-from rcgcrd_4.msg import RCGCRD
-from rcgcrd_4_conversion.robocup_game_control_return_data import RoboCupGameControlReturnData
 from construct import Container
+
+from rcgcrd_4.msg import RCGCRD
+
+from rcgcrd_4_conversion.conversion import data_to_msg, msg_to_data
+from rcgcrd_4_conversion.robocup_game_control_return_data import RoboCupGameControlReturnData
 
 
 def test_msg_to_data():
+    """Convert RCGCRD msg to binary data."""
     msg = RCGCRD()
     msg.player_num = 1
     msg.team_num = 2
@@ -38,6 +41,7 @@ def test_msg_to_data():
 
 
 def test_data_to_msg():
+    """Convert binary data to RCGCRD msg."""
     container = Container(
         playerNum=1,
         teamNum=2,
