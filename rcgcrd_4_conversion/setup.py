@@ -15,8 +15,8 @@ setup(
     zip_safe=True,
     maintainer='ijnek',
     maintainer_email='kenjibrameld@gmail.com',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='Converts RoboCup GameController Return Data V4 between ROS msg and UDP raw bytes',
+    license='Apache License 2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
