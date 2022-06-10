@@ -17,7 +17,6 @@
   <exec_depend>rcgcd_14_conversion</exec_depend>
   <exec_depend>rcgcrd_4</exec_depend>
   <exec_depend>rcgcrd_4_conversion</exec_depend>
-  <exec_depend>python3-construct</exec_depend>
 
   <export>
     <build_type>ament_python</build_type>

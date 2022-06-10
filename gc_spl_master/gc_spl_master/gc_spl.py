@@ -41,8 +41,11 @@ class GCSPL(Node):
     def __init__(self, node_name='gc_spl', **kwargs):
         super().__init__(node_name, **kwargs)
 
+        # Declare parameters
+        self.declare_parameter('return_port', 3939)
+
         # Read and log parameters
-        return_port = self.get_parameter_or('return_port', 3939)
+        return_port = self.get_parameter('return_port').value
         self.get_logger().debug('return_port: "%s"' % return_port)
 
         # Setup publisher
