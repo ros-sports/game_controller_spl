@@ -148,7 +148,7 @@ class TestGCSPL:
         # Check if packet has arrived
         try:
             _ = server.recv(1024)
-        except TimeoutError:
+        except socket.timeout:
             assert False
 
         # Shutdown
