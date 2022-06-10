@@ -15,8 +15,8 @@ setup(
     zip_safe=True,
     maintainer='ijnek',
     maintainer_email='kenjibrameld@gmail.com',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='GameController-Robot communication in RoboCup SPL',
+    license='Apache License 2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
