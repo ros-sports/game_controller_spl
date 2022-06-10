@@ -40,7 +40,7 @@ class GCSPL(Node):
 
     def __init__(self, node_name='gc_spl', **kwargs):
         super().__init__(node_name, **kwargs)
-        
+
         # Declare parameters
         self.declare_parameter('return_port', 3939)
 
