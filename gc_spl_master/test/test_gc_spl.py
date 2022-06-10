@@ -108,7 +108,7 @@ class TestGCSPL:
             server.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
             server.sendto(self.msg, ('', 3838))
 
-        # Wait for RCGCD to receive packet over UDP, and send back a ROS msg
+        # Wait for RCGCD to receive packet over UDP, and publish a ROS msg
         time.sleep(0.1)
 
         # Check if message has been received
