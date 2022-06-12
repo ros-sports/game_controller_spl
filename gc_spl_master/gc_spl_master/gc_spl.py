@@ -15,15 +15,15 @@
 import socket
 from threading import Thread
 
-from rcgcd_14.msg import RCGCD
+from rcgcd_spl_14.msg import RCGCD
 
-from rcgcd_14_conversion.conversion import rcgcd_data_to_msg
-from rcgcd_14_conversion.robocup_game_control_data import GAMECONTROLLER_DATA_PORT
+from rcgcd_spl_14_conversion.conversion import rcgcd_data_to_msg
+from rcgcd_spl_14_conversion.robocup_game_control_data import GAMECONTROLLER_DATA_PORT
 
-from rcgcrd_4.msg import RCGCRD
+from rcgcrd_spl_4.msg import RCGCRD
 
-from rcgcrd_4_conversion.conversion import rcgcrd_msg_to_data
-from rcgcrd_4_conversion.robocup_game_control_return_data import GAMECONTROLLER_RETURN_PORT
+from rcgcrd_spl_4_conversion.conversion import rcgcrd_msg_to_data
+from rcgcrd_spl_4_conversion.robocup_game_control_return_data import GAMECONTROLLER_RETURN_PORT
 
 
 import rclpy

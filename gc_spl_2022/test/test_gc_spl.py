@@ -19,11 +19,11 @@ from construct import Container
 
 from gc_spl_2022.gc_spl import GCSPL
 
-from rcgcd_14.msg import RCGCD
+from rcgcd_spl_14.msg import RCGCD
 
-from rcgcd_14_conversion.robocup_game_control_data import RoboCupGameControlData
+from rcgcd_spl_14_conversion.robocup_game_control_data import RoboCupGameControlData
 
-from rcgcrd_4.msg import RCGCRD
+from rcgcrd_spl_4.msg import RCGCRD
 
 import rclpy
 

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>rcgcd_14</name>
+  <name>rcgcd_spl_14</name>
   <version>0.0.0</version>
   <description>RoboCup GameController Data V14 ROS msg</description>
   <maintainer email="kenjibrameld@gmail.com">ijnek</maintainer>

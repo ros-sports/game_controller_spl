@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>rcgcd_14_conversion</name>
+  <name>rcgcrd_spl_4_conversion</name>
   <version>0.0.0</version>
-  <description>Converts RoboCup GameController Data V14 between ROS msg and UDP raw bytes</description>
+  <description>Converts RoboCup GameController Return Data V4 between ROS msg and UDP raw bytes</description>
   <maintainer email="kenjibrameld@gmail.com">ijnek</maintainer>
   <license>Apache License 2.0</license>
 
   <exec_depend>python3-construct</exec_depend>
-  <exec_depend>rcgcd_14</exec_depend>
+  <exec_depend>rcgcrd_spl_4</exec_depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
