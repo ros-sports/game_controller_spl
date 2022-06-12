@@ -14,9 +14,9 @@
 
 from construct import Container
 
-from rcgcrd_4.msg import RCGCRD
+from rcgcrd_spl_4.msg import RCGCRD
 
-from rcgcrd_4_conversion.robocup_game_control_return_data import RoboCupGameControlReturnData
+from rcgcrd_spl_4_conversion.robocup_game_control_return_data import RoboCupGameControlReturnData
 
 
 def rcgcrd_msg_to_data(msg: RCGCRD) -> bytes:
