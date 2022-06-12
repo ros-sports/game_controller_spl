@@ -12,10 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from rcgcrd_4.msg import RCGCRD
+from rcgcrd_spl_4.msg import RCGCRD
 
-from rcgcrd_4_conversion.conversion import rcgcrd_msg_to_data
-from rcgcrd_4_conversion.robocup_game_control_return_data import RoboCupGameControlReturnData
+from rcgcrd_spl_4_conversion.conversion import rcgcrd_msg_to_data
+from rcgcrd_spl_4_conversion.robocup_game_control_return_data import RoboCupGameControlReturnData
 
 
 def test_rcgcrd_msg_to_data():

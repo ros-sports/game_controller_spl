@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'rcgcrd_4_conversion'
+package_name = 'rcgcd_spl_14_conversion'
 
 setup(
     name=package_name,
@@ -15,7 +15,7 @@ setup(
     zip_safe=True,
     maintainer='ijnek',
     maintainer_email='kenjibrameld@gmail.com',
-    description='Converts RoboCup GameController Return Data V4 between ROS msg and UDP raw bytes',
+    description='Converts RoboCup GameController Data V14 between ROS msg and UDP raw bytes',
     license='Apache License 2.0',
     tests_require=['pytest'],
     entry_points={

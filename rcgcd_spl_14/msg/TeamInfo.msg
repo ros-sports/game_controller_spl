@@ -15,4 +15,4 @@ uint8 score
 uint8 penalty_shot
 uint16 single_shots
 uint16 message_budget
-rcgcd_14/RobotInfo[7] players
+rcgcd_spl_14/RobotInfo[7] players
