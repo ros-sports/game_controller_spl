@@ -35,4 +35,4 @@ uint8 first_half
 uint8 kicking_team
 int16 secs_remaining
 int16 secondary_time
-rcgcd_14/TeamInfo[2] teams
+rcgcd_spl_14/TeamInfo[2] teams
