@@ -14,7 +14,8 @@
 
 from rcgcd_spl_14.msg import RCGCD
 
-from rcgcd_spl_14_conversion.robocup_game_control_data import MAX_NUM_PLAYERS, RoboCupGameControlData
+from rcgcd_spl_14_conversion.robocup_game_control_data import (
+    MAX_NUM_PLAYERS, RoboCupGameControlData)
 
 
 def rcgcd_data_to_msg(data: bytes) -> RCGCD:
