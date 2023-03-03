@@ -19,9 +19,9 @@ from construct import Container
 
 from gc_spl_master.gc_spl import GCSPL
 
-from rcgcd_spl_14.msg import RCGCD
+from rcgcd_spl_15.msg import RCGCD
 
-from rcgcd_spl_14_conversion.robocup_game_control_data import RoboCupGameControlData
+from rcgcd_spl_15_conversion.robocup_game_control_data import RoboCupGameControlData
 
 from rcgcrd_spl_4.msg import RCGCRD
 
@@ -49,12 +49,27 @@ class TestGCSPL:
             teams=[
                 Container(
                     teamNumber=0,
-                    teamColour=0,
+                    fieldPlayerColour=0,
+                    goalkeeperColour=0,
+                    goalkeeper=0,
                     score=0,
                     penaltyShot=0,
                     singleShots=0,
                     messageBudget=0,
                     players=[
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
                         Container(penalty=0, secsTillUnpenalised=0),
                         Container(penalty=0, secsTillUnpenalised=0),
                         Container(penalty=0, secsTillUnpenalised=0),
@@ -66,12 +81,27 @@ class TestGCSPL:
                 ),
                 Container(
                     teamNumber=0,
-                    teamColour=0,
+                    fieldPlayerColour=0,
+                    goalkeeperColour=0,
+                    goalkeeper=0,
                     score=0,
                     penaltyShot=0,
                     singleShots=0,
                     messageBudget=0,
                     players=[
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
+                        Container(penalty=0, secsTillUnpenalised=0),
                         Container(penalty=0, secsTillUnpenalised=0),
                         Container(penalty=0, secsTillUnpenalised=0),
                         Container(penalty=0, secsTillUnpenalised=0),
