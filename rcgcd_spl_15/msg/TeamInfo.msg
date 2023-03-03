@@ -10,9 +10,12 @@ uint8 TEAM_BROWN=8  # brown
 uint8 TEAM_GRAY=9  # lighter gray
 
 uint8 team_number
+uint8 field_player_colour
+uint8 goalkeeper_colour
+uint8 goalkeeper
 uint8 team_colour
 uint8 score
 uint8 penalty_shot
 uint16 single_shots
 uint16 message_budget
-rcgcd_spl_15/RobotInfo[7] players
+rcgcd_spl_15/RobotInfo[20] players
