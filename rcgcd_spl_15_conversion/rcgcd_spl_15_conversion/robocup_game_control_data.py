@@ -108,7 +108,7 @@ RobotInfo = Struct(
 
 TeamInfo = Struct(
     'teamNumber' / Byte,        # unique team number
-    'fieldPlayerColour' / Byte, # colour of the field players
+    'fieldPlayerColour' / Byte,  # colour of the field players
     'goalkeeperColour' / Byte,  # colour of the goalkeeper
     'goalkeeper' / Byte,        # player number of the goalkeeper (1-MAX_NUM_PLAYERS)
     'score' / Byte,             # team's score
