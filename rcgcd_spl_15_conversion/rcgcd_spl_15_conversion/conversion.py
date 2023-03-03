@@ -35,7 +35,9 @@ def rcgcd_data_to_msg(data: bytes) -> RCGCD:
     msg.secondary_time = parsed.secondaryTime
     for t in range(2):
         msg.teams[t].team_number = parsed.teams[t].teamNumber
-        msg.teams[t].team_colour = parsed.teams[t].teamColour
+        msg.teams[t].field_player_colour = parsed.teams[t].fieldPlayerColour
+        msg.teams[t].goalkeeper_colour = parsed.teams[t].goalkeeperColour
+        msg.teams[t].goalkeeper = parsed.teams[t].goalkeeper
         msg.teams[t].score = parsed.teams[t].score
         msg.teams[t].penalty_shot = parsed.teams[t].penaltyShot
         msg.teams[t].single_shots = parsed.teams[t].singleShots

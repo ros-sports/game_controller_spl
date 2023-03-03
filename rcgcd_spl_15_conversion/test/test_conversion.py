@@ -17,7 +17,7 @@ from construct import Container
 from rcgcd_spl_15_conversion.conversion import rcgcd_data_to_msg
 
 from rcgcd_spl_15_conversion.robocup_game_control_data import (
-    COMPETITION_PHASE_PLAYOFF, COMPETITION_TYPE_CHALLENGE_SHIELD,
+    COMPETITION_PHASE_PLAYOFF, COMPETITION_TYPE_DYNAMIC_BALL_HANDLING,
     GAME_PHASE_PENALTYSHOOT, PENALTY_MANUAL, PENALTY_NONE, PENALTY_SPL_PLAYER_PUSHING,
     RoboCupGameControlData, SET_PLAY_GOAL_KICK, STATE_READY, TEAM_RED, TEAM_YELLOW)
 
@@ -29,7 +29,7 @@ def test_rcgcd_data_to_msg():
             packetNumber=1,
             playersPerTeam=5,
             competitionPhase=COMPETITION_PHASE_PLAYOFF,
-            competitionType=COMPETITION_TYPE_CHALLENGE_SHIELD,
+            competitionType=COMPETITION_TYPE_DYNAMIC_BALL_HANDLING,
             gamePhase=GAME_PHASE_PENALTYSHOOT,
             state=STATE_READY,
             setPlay=SET_PLAY_GOAL_KICK,
@@ -40,7 +40,9 @@ def test_rcgcd_data_to_msg():
             teams=[
                 Container(
                     teamNumber=1,
-                    teamColour=TEAM_RED,
+                    fieldPlayerColour=TEAM_RED,
+                    goalkeeperColour=TEAM_RED,
+                    goalkeeper=1,
                     score=1,
                     penaltyShot=2,
                     singleShots=3,
@@ -59,11 +61,39 @@ def test_rcgcd_data_to_msg():
                         Container(penalty=PENALTY_NONE,
                                   secsTillUnpenalised=0),
                         Container(penalty=PENALTY_SPL_PLAYER_PUSHING,
-                                  secsTillUnpenalised=2)
+                                  secsTillUnpenalised=2),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
                     ]),
                 Container(
                     teamNumber=2,
-                    teamColour=TEAM_YELLOW,
+                    fieldPlayerColour=TEAM_YELLOW,
+                    goalkeeperColour=TEAM_YELLOW,
+                    goalkeeper=1,
                     score=4,
                     penaltyShot=5,
                     singleShots=6,
@@ -82,7 +112,33 @@ def test_rcgcd_data_to_msg():
                         Container(penalty=PENALTY_NONE,
                                   secsTillUnpenalised=0),
                         Container(penalty=PENALTY_SPL_PLAYER_PUSHING,
-                                  secsTillUnpenalised=12)
+                                  secsTillUnpenalised=12),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
+                        Container(penalty=PENALTY_NONE,
+                                  secsTillUnpenalised=0),
                     ])
             ]
         )
@@ -92,7 +148,7 @@ def test_rcgcd_data_to_msg():
     assert msg.packet_number == 1
     assert msg.players_per_team == 5
     assert msg.competition_phase == COMPETITION_PHASE_PLAYOFF
-    assert msg.competition_type == COMPETITION_TYPE_CHALLENGE_SHIELD
+    assert msg.competition_type == COMPETITION_TYPE_DYNAMIC_BALL_HANDLING
     assert msg.game_phase == GAME_PHASE_PENALTYSHOOT
     assert msg.state == STATE_READY
     assert msg.set_play == SET_PLAY_GOAL_KICK
@@ -101,7 +157,9 @@ def test_rcgcd_data_to_msg():
     assert msg.secs_remaining == 10
     assert msg.secondary_time == 2
     assert msg.teams[0].team_number == 1
-    assert msg.teams[0].team_colour == TEAM_RED
+    assert msg.teams[0].field_player_colour == TEAM_RED
+    assert msg.teams[0].goalkeeper_colour == TEAM_RED
+    assert msg.teams[0].goalkeeper == 1
     assert msg.teams[0].score == 1
     assert msg.teams[0].penalty_shot == 2
     assert msg.teams[0].single_shots == 3
@@ -111,7 +169,9 @@ def test_rcgcd_data_to_msg():
     assert msg.teams[0].players[6].penalty == PENALTY_SPL_PLAYER_PUSHING
     assert msg.teams[0].players[6].secs_till_unpenalised == 2
     assert msg.teams[1].team_number == 2
-    assert msg.teams[1].team_colour == TEAM_YELLOW
+    assert msg.teams[1].field_player_colour == TEAM_YELLOW
+    assert msg.teams[1].goalkeeper_colour == TEAM_YELLOW
+    assert msg.teams[1].goalkeeper == 1
     assert msg.teams[1].score == 4
     assert msg.teams[1].penalty_shot == 5
     assert msg.teams[1].single_shots == 6
