@@ -13,8 +13,8 @@
   <test_depend>python3-pytest</test_depend>
 
   <exec_depend>rclpy</exec_depend>
-  <exec_depend>rcgcd_spl_14</exec_depend>
-  <exec_depend>rcgcd_spl_14_conversion</exec_depend>
+  <exec_depend>rcgcd_spl_15</exec_depend>
+  <exec_depend>rcgcd_spl_15_conversion</exec_depend>
   <exec_depend>rcgcrd_spl_4</exec_depend>
   <exec_depend>rcgcrd_spl_4_conversion</exec_depend>
 
