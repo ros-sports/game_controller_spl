@@ -132,7 +132,7 @@ class TestGCSPL:
         subscription = test_node.create_subscription(  # noqa: F841
             RCGCD, 'gc/data', self._callback_msg, 10)
 
-        # UDP Server - adapted from https://github.com/ninedraft/python-udp/blob/2023/server.py
+        # UDP Server - adapted from https://github.com/ninedraft/python-udp/blob/master/server.py
         with socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP) as server:
             server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             server.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
@@ -155,7 +155,7 @@ class TestGCSPL:
         test_node = rclpy.node.Node('test')
         publisher = test_node.create_publisher(RCGCRD, 'gc/return_data', 10)
 
-        # UDP Server - adapted from https://github.com/ninedraft/python-udp/blob/2023/server.py
+        # UDP Server - adapted from https://github.com/ninedraft/python-udp/blob/master/server.py
         server = socket.socket(
             socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
         server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
