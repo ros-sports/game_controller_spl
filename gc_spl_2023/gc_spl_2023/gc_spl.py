@@ -55,7 +55,7 @@ class GCSPL(Node):
         self._subscriber = self.create_subscription(
             RCGCRD, 'gc/return_data', self._rcgcrd_callback, 10)
 
-        # UDP Client - adapted from https://github.com/ninedraft/python-udp/blob/2023/client.py
+        # UDP Client - adapted from https://github.com/ninedraft/python-udp/blob/master/client.py
         self._client = socket.socket(
             socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)  # UDP
         # This has to be SO_REUSEADDR instead of SO_REUSEPORT to work with TCM
