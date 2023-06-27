@@ -20,5 +20,8 @@
 
   <export>
     <build_type>ament_python</build_type>
+    <deprecated>
+      This package is deprecated, and will be removed in J-turtle. Please use gc_spl_2023.
+    </deprecated>
   </export>
 </package>
