@@ -1,0 +1,11 @@
+[build-system]
+requires=["system_tools"]
+build-backend="setuptools.build_meta:__legacy__"
+
+[project]
+name="my_package"
+version="0.0.0"
+description="A package for GameController SPL"
+
+[project.scripts]
+my_executable="my_package:main"
