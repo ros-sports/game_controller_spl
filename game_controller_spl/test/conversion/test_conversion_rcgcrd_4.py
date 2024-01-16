@@ -13,7 +13,8 @@
 # limitations under the License.
 
 from game_controller_spl.rcgcrd_4.conversion import rcgcrd_msg_to_data
-from game_controller_spl.rcgcrd_4.robocup_game_control_return_data import RoboCupGameControlReturnData
+from game_controller_spl.rcgcrd_4.robocup_game_control_return_data import \
+    RoboCupGameControlReturnData
 from game_controller_spl_interfaces.msg import RCGCRD4 as RCGCRD
 
 
