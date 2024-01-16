@@ -14,9 +14,9 @@
 
 from construct import Container
 
-from gc_spl.rcgcd_14.conversion import rcgcd_data_to_msg
+from game_controller_spl.rcgcd_14.conversion import rcgcd_data_to_msg
 
-from gc_spl.rcgcd_14.robocup_game_control_data import (
+from game_controller_spl.rcgcd_14.robocup_game_control_data import (
     COMPETITION_PHASE_PLAYOFF, COMPETITION_TYPE_CHALLENGE_SHIELD,
     GAME_PHASE_PENALTYSHOOT, PENALTY_MANUAL, PENALTY_NONE, PENALTY_SPL_PLAYER_PUSHING,
     RoboCupGameControlData, SET_PLAY_GOAL_KICK, STATE_READY, TEAM_RED, TEAM_YELLOW)

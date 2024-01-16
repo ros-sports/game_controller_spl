@@ -17,10 +17,10 @@ import time
 
 from construct import Container
 
-from gc_spl.gc_spl import GCSPL
-from gc_spl.rcgcd_15.robocup_game_control_data import RoboCupGameControlData
-from gc_spl_interfaces.msg import RCGCD15 as RCGCD
-from gc_spl_interfaces.msg import RCGCRD4 as RCGCRD
+from game_controller_spl.game_controller_spl import GCSPL
+from game_controller_spl.rcgcd_15.robocup_game_control_data import RoboCupGameControlData
+from game_controller_spl_interfaces.msg import RCGCD15 as RCGCD
+from game_controller_spl_interfaces.msg import RCGCRD4 as RCGCRD
 
 import rclpy
 from rclpy.parameter import Parameter
@@ -128,7 +128,7 @@ class TestGCSPL:
         """
         # Setup nodes
         rclpy.init()
-        gc_spl_node = GCSPL(parameter_overrides=[  # noqa: F841
+        game_controller_spl_node = GCSPL(parameter_overrides=[  # noqa: F841
             Parameter('rcgcd_version', value=RCGCD_VERSION),
             Parameter('rcgcrd_version', value=RCGCRD_VERSION)])
         test_node = rclpy.node.Node('test')
@@ -154,7 +154,7 @@ class TestGCSPL:
     def test_sending(self):
         # Setup nodes
         rclpy.init()
-        gc_spl_node = GCSPL(parameter_overrides=[
+        game_controller_spl_node = GCSPL(parameter_overrides=[
             Parameter('rcgcd_version', value=RCGCD_VERSION),
             Parameter('rcgcrd_version', value=RCGCRD_VERSION)])
         test_node = rclpy.node.Node('test')
@@ -171,14 +171,14 @@ class TestGCSPL:
         # Send first message so client knows GC's address.
         server.sendto(self.msg, ('', 3838))
 
-        # Publish RCGCRD to gc_spl_node
+        # Publish RCGCRD to game_controller_spl_node
         publisher.publish(RCGCRD())
 
-        # Wait before spinning for the msg arrive in gc_spl_node's subscription
+        # Wait before spinning for the msg arrive in game_controller_spl_node's subscription
         time.sleep(0.01)
 
-        # Spin gc_spl_node to process incoming message and send out UDP message
-        rclpy.spin_once(gc_spl_node, timeout_sec=0)
+        # Spin game_controller_spl_node to process incoming message and send out UDP message
+        rclpy.spin_once(game_controller_spl_node, timeout_sec=0)
 
         # Check if packet has arrived
         try:

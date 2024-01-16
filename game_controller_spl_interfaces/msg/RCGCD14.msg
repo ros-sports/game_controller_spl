@@ -2,7 +2,9 @@ uint8 COMPETITION_PHASE_ROUNDROBIN=0
 uint8 COMPETIION_PHASE_PLAYOFF=1
 
 uint8 COMPETITION_TYPE_NORMAL=0
-uint8 COMPETITION_TYPE_DYNAMIC_BALL_HANDLING=1
+uint8 COMPETITION_TYPE_CHALLENGE_SHIELD=1
+uint8 COMPETITION_TYPE_7V7=2
+uint8 COMPETITION_TYPE_DYNAMIC_BALL_HANDLING=3
 
 uint8 GAME_PHASE_NORMAL=0
 uint8 GAME_PHASE_PENALTYSHOOT=1
@@ -33,4 +35,4 @@ uint8 first_half
 uint8 kicking_team
 int16 secs_remaining
 int16 secondary_time
-gc_spl_interfaces/TeamInfo15[2] teams
+game_controller_spl_interfaces/TeamInfo14[2] teams

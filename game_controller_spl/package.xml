@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>gc_spl</name>
+  <name>game_controller_spl</name>
   <version>0.0.0</version>
   <description>GameController-Robot communication in RoboCup SPL</description>
   <maintainer email="kenjibrameld@gmail.com">ijnek</maintainer>
   <license>Apache License 2.0</license>
 
-  <exec_depend>gc_spl_interfaces</exec_depend>
+  <exec_depend>game_controller_spl_interfaces</exec_depend>
   <exec_depend>python3-construct</exec_depend>
   <exec_depend>rclpy</exec_depend>
 

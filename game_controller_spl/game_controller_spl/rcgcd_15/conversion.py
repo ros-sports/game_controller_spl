@@ -12,9 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from gc_spl.rcgcd_15.robocup_game_control_data import (
+from game_controller_spl.rcgcd_15.robocup_game_control_data import (
     MAX_NUM_PLAYERS, RoboCupGameControlData)
-from gc_spl_interfaces.msg import RCGCD15
+from game_controller_spl_interfaces.msg import RCGCD15
 
 
 def rcgcd_data_to_msg(data: bytes) -> RCGCD15:

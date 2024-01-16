@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'gc_spl'
+package_name = 'game_controller_spl'
 
 setup(
     name=package_name,
@@ -20,7 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'gc_spl = gc_spl.gc_spl:main',
+            'game_controller_spl = game_controller_spl.game_controller_spl:main',
         ],
     },
 )

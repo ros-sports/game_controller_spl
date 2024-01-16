@@ -29,7 +29,7 @@ class GCSPL(Node):
     _host = None
     _RCGCD = None
 
-    def __init__(self, node_name='gc_spl', **kwargs):
+    def __init__(self, node_name='game_controller_spl', **kwargs):
         super().__init__(node_name, **kwargs)
 
         # Declare parameters
@@ -82,15 +82,15 @@ class GCSPL(Node):
     def _setup_methods(self, rcgcd_version, rcgcrd_version):
         # RCGCD
         if rcgcd_version == 14:
-            from gc_spl_interfaces.msg import RCGCD14 as RCGCD
-            from gc_spl.rcgcd_14.robocup_game_control_data import \
+            from game_controller_spl_interfaces.msg import RCGCD14 as RCGCD
+            from game_controller_spl.rcgcd_14.robocup_game_control_data import \
                 GAMECONTROLLER_DATA_PORT
-            from gc_spl.rcgcd_14.conversion import rcgcd_data_to_msg
+            from game_controller_spl.rcgcd_14.conversion import rcgcd_data_to_msg
         elif rcgcd_version == 15:
-            from gc_spl_interfaces.msg import RCGCD15 as RCGCD
-            from gc_spl.rcgcd_15.robocup_game_control_data import \
+            from game_controller_spl_interfaces.msg import RCGCD15 as RCGCD
+            from game_controller_spl.rcgcd_15.robocup_game_control_data import \
                 GAMECONTROLLER_DATA_PORT
-            from gc_spl.rcgcd_15.conversion import rcgcd_data_to_msg
+            from game_controller_spl.rcgcd_15.conversion import rcgcd_data_to_msg
         else:
             self.get_logger().error('rcgcd_version ' + rcgcd_version + ' is not supported.')
         self.RCGCD = RCGCD
@@ -99,9 +99,9 @@ class GCSPL(Node):
 
         # RCGCRD
         if rcgcrd_version == 4:
-            from gc_spl_interfaces.msg import RCGCRD4 as RCGCRD
-            from gc_spl.rcgcrd_4.conversion import rcgcrd_msg_to_data
-            from gc_spl.rcgcrd_4.robocup_game_control_return_data import \
+            from game_controller_spl_interfaces.msg import RCGCRD4 as RCGCRD
+            from game_controller_spl.rcgcrd_4.conversion import rcgcrd_msg_to_data
+            from game_controller_spl.rcgcrd_4.robocup_game_control_return_data import \
                 GAMECONTROLLER_RETURN_PORT
         else:
             self.get_logger().error('rcgcrd_version ' + rcgcrd_version + ' is not supported.')
@@ -139,8 +139,8 @@ class GCSPL(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    gc_spl = GCSPL()
-    rclpy.spin(gc_spl)
+    game_controller_spl = GCSPL()
+    rclpy.spin(game_controller_spl)
     rclpy.shutdown()
 
 

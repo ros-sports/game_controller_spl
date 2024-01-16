@@ -12,9 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from gc_spl.rcgcrd_4.conversion import rcgcrd_msg_to_data
-from gc_spl.rcgcrd_4.robocup_game_control_return_data import RoboCupGameControlReturnData
-from gc_spl_interfaces.msg import RCGCRD4 as RCGCRD
+from game_controller_spl.rcgcrd_4.conversion import rcgcrd_msg_to_data
+from game_controller_spl.rcgcrd_4.robocup_game_control_return_data import RoboCupGameControlReturnData
+from game_controller_spl_interfaces.msg import RCGCRD4 as RCGCRD
 
 
 def test_rcgcrd_msg_to_data():
