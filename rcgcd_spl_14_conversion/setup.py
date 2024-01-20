@@ -4,7 +4,7 @@ package_name = 'rcgcd_spl_14_conversion'
 
 setup(
     name=package_name,
-    version='3.0.0',
+    version='4.0.0',
     packages=[package_name],
     data_files=[
         ('share/ament_index/resource_index/packages',
