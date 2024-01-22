@@ -92,7 +92,7 @@ class GCSPL(Node):
                 GAMECONTROLLER_DATA_PORT
             from game_controller_spl.rcgcd_15.conversion import rcgcd_data_to_msg
         else:
-            self.get_logger().error('rcgcd_version ' + rcgcd_version + ' is not supported.')
+            self.get_logger().error('rcgcd_version ' + str(rcgcd_version) + ' is not supported.')
         self.RCGCD = RCGCD
         self.GAMECONTROLLER_DATA_PORT = GAMECONTROLLER_DATA_PORT
         self.rcgcd_data_to_msg = rcgcd_data_to_msg
@@ -104,7 +104,7 @@ class GCSPL(Node):
             from game_controller_spl.rcgcrd_4.robocup_game_control_return_data import \
                 GAMECONTROLLER_RETURN_PORT
         else:
-            self.get_logger().error('rcgcrd_version ' + rcgcrd_version + ' is not supported.')
+            self.get_logger().error('rcgcrd_version ' + str(rcgcrd_version) + ' is not supported.')
         self.RCGCRD = RCGCRD
         self.rcgcrd_msg_to_data = rcgcrd_msg_to_data
         self.GAMECONTROLLER_RETURN_PORT = GAMECONTROLLER_RETURN_PORT
