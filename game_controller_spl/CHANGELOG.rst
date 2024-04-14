@@ -2,8 +2,8 @@
 Changelog for package game_controller_spl
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.0.1 (2024-04-14)
+------------------
 * fix print error
 * Contributors: Kenji Brameld
 
