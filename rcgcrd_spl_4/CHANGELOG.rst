@@ -2,6 +2,9 @@
 Changelog for package rcgcrd_spl_4
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 4.0.0 (2024-01-20)
 ------------------
 * Deprecate package(`#81 <https://github.com/ros-sports/gc_spl/issues/81>`_)
