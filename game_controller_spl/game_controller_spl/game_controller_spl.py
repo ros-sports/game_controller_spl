@@ -91,6 +91,11 @@ class GCSPL(Node):
             from game_controller_spl.rcgcd_15.robocup_game_control_data import \
                 GAMECONTROLLER_DATA_PORT
             from game_controller_spl.rcgcd_15.conversion import rcgcd_data_to_msg
+        elif rcgcd_version == 16:
+            from game_controller_spl_interfaces.msg import RCGCD16 as RCGCD
+            from game_controller_spl.rcgcd_16.robocup_game_control_data import \
+                GAMECONTROLLER_DATA_PORT
+            from game_controller_spl.rcgcd_16.conversion import rcgcd_data_to_msg
         else:
             self.get_logger().error('rcgcd_version ' + rcgcd_version + ' is not supported.')
         self.RCGCD = RCGCD
