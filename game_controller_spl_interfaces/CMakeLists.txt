@@ -21,6 +21,11 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   msg/RobotInfo15.msg
   msg/TeamInfo15.msg
 
+  # RCGCD 16
+  msg/RCGCD16.msg
+  msg/RobotInfo16.msg
+  msg/TeamInfo16.msg
+
   # RCGCRD 4
   msg/RCGCRD4.msg
 )
