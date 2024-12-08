@@ -2,8 +2,8 @@
 Changelog for package game_controller_spl_interfaces
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+5.0.0 (2024-12-08)
+------------------
 * Updates for RCGCD16 (`#92 <https://github.com/ros-sports/gc_spl/issues/92>`_)
 * Fix typo (`#88 <https://github.com/ros-sports/gc_spl/issues/88>`_)
 * Contributors: Kenji Brameld, ijnek
