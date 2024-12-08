@@ -2,6 +2,11 @@
 Changelog for package gc_spl_interfaces
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix typo (`#88 <https://github.com/ros-sports/gc_spl/issues/88>`_)
+* Contributors: Kenji Brameld
+
 4.0.1 (2024-04-14)
 ------------------
 
