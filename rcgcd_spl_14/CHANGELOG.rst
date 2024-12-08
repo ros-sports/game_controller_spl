@@ -2,8 +2,8 @@
 Changelog for package rcgcd_spl_14
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.1.0 (2024-12-08)
+------------------
 * Fix typo (`#88 <https://github.com/ros-sports/gc_spl/issues/88>`_)
 * Contributors: Kenji Brameld
 

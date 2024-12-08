@@ -4,7 +4,7 @@ package_name = 'rcgcrd_spl_4_conversion'
 
 setup(
     name=package_name,
-    version='4.0.1',
+    version='4.1.0',
     packages=[package_name],
     data_files=[
         ('share/ament_index/resource_index/packages',

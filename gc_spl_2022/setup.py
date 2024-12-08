@@ -4,7 +4,7 @@ package_name = 'gc_spl_2022'
 
 setup(
     name=package_name,
-    version='4.0.1',
+    version='4.1.0',
     packages=[package_name],
     data_files=[
         ('share/ament_index/resource_index/packages',
