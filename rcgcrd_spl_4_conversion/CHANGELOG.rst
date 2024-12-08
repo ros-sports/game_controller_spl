@@ -2,6 +2,9 @@
 Changelog for package rcgcrd_spl_4_conversion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.1.0 (2024-01-20)
 ------------------
 
